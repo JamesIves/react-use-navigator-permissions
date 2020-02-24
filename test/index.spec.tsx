@@ -10,7 +10,9 @@ export interface Global {
 declare const global: Global;
 
 const mockPermissions = {
-  query: jest.fn().mockImplementationOnce(() => Promise.resolve({ state:'permitted'})),
+  query: jest
+    .fn()
+    .mockImplementationOnce(() => Promise.resolve({ state: 'permitted' })),
 };
 
 afterEach(cleanup);
@@ -23,11 +25,15 @@ describe('it', () => {
   });
 
   it('correctly returns the permission status', async () => {
-    act(() => {global.navigator.permissions = mockPermissions})
+    act(() => {
+      global.navigator.permissions = mockPermissions;
+    });
 
-    const { result, waitForNextUpdate } = renderHook(() => useNavigatorPermission('geolocation'))
+    const { result, waitForNextUpdate } = renderHook(() =>
+      useNavigatorPermission('geolocation')
+    );
 
-    await waitForNextUpdate()
+    await waitForNextUpdate();
 
     expect(result.current).toStrictEqual({
       error: false,
