@@ -11,7 +11,7 @@ yarn add react-use-navigator-permissions
 
 It can then be included in your project like so.
 
-```
+```javascript
 import useNavigatorPermissions from 'react-use-navigator-permissions'
 
 const Component = () => {
