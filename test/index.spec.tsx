@@ -3,7 +3,7 @@ import useNavigatorPermission from '../src';
 
 export interface Global {
   document: Document;
-  window: Window;
+  window: Window | undefined;
   navigator: any;
 }
 
@@ -17,7 +17,7 @@ const mockPermissions = {
 
 afterEach(cleanup);
 
-describe('it', () => {
+describe('useNavigatorPermissions', () => {
   it('correctly returns an error when navigator is not available', () => {
     const { result } = renderHook(() => useNavigatorPermission('geolocation'));
 
