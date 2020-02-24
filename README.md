@@ -11,11 +11,11 @@ yarn add react-use-navigator-permissions
 
 It can then be included in your project like so.
 
-```
+```javascript
 import useNavigatorPermissions from 'react-use-navigator-permissions'
 
 const Component = () => {
-  const { status } = useNavigatorPermissions('geolocation')
+  const { status, error } = useNavigatorPermissions('geolocation')
 
   return (
     <div>{status}</div>
