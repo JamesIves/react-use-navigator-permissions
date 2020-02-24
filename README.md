@@ -1,6 +1,6 @@
 # useNavigatorPermissions Hook 🔗 🗺️
 
-This [React Hook](https://reactjs.org/docs/hooks-overview.html) allows you to query to see if a user has either accepted or denied permissions to a given navigator api.
+This [React Hook](https://reactjs.org/docs/hooks-overview.html) allows you to make a query to see if a user has either accepted or denied permissions to a given [navigator api](https://developer.mozilla.org/en-US/docs/Web/API/Navigator).
 
 ## Getting Started ✈️
 You can install this hook using Yarn.
