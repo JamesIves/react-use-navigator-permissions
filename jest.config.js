@@ -1,1 +1,3 @@
-export const collectCoverage = true;
+module.exports = {
+  collectCoverage: true
+}
