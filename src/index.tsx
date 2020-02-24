@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-type useNavigatorPermissionsTypes = {
+type useNavigatorPermissionsInterface = {
   /** The permission status. This will be an empty string if it's still fetching. */
   status: string;
   /** Returns true if the navigator api encounters an issue. */
@@ -12,7 +12,7 @@ const useNavigatorPermissions = (
   name: PermissionName,
   /** Reference: https://developer.mozilla.org/en-US/docs/Web/API/Permissions/query */
   configuration?: object
-): useNavigatorPermissionsTypes => {
+): useNavigatorPermissionsInterface => {
   const [error, setError] = useState(false);
   const [permitted, setPermitted] = useState('');
 
