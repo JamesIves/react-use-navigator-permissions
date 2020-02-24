@@ -15,11 +15,7 @@ const useNavigatorPermissions = (
   const [permitted, setPermitted] = useState('');
 
   useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
-
-    if (window.navigator && window.navigator.permissions) {
+    if (window && window.navigator && window.navigator.permissions) {
       window.navigator.permissions
         .query({ name, ...configuration })
         .then(status => {
