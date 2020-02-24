@@ -2,12 +2,20 @@
   "name": "re",
   "author": "James Ives <iam@jamesiv.es>",
   "module": "dist/re.esm.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "main": "dist/lib.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "react",
+    "react-hook",
+    "react-hooks",
+    "navigator-api",
+    "browser",
+    "browser-api"
   ],
   "scripts": {
     "start": "tsdx watch",
