@@ -1,17 +1,31 @@
-# useNavigatorPermissions React Hook 🔗 🗺️
-This is a React hook which checks to see if the user has provided the appropriate permissions for a given navigator API.
+# useNavigatorPermissions Hook 🔗 🗺️
 
-## Getting Started
-You can install this hook `yarn` or `npm`.
+This [React Hook](https://reactjs.org/docs/hooks-overview.html) allows you to query to see if a user has either accepted or denied permissions to a given navigator api.
 
-```sh
+## Getting Started ✈️
+You can install this hook using Yarn.
+
+```
 yarn add react-use-navigator-permissions
 ```
 
-It can be used like so:
+It can then be included in your project like so.
 
-```javascript
-const permissions = useNavigatorPermissions('geolocation')
+```
+import useNavigatorPermissions from 'react-use-navigator-permissions'
+
+const Component = () => {
+  const { status } = useNavigatorPermissions('geolocation')
+
+  return (
+    <div>{status}</div>
+  )
+}
 ```
 
-The value of `permissions` will depend on the status of the API. You can use the information returned to determine if the user should be prompted, or if you should display an error message in your application. This hook will not request permissions for you.
+The first argument accepts the api name, and the second accepts a series of [configuration parameters](https://developer.mozilla.org/en-US/docs/Web/API/Permissions/query).
+
+## Browser Compatibility 📣
+
+This hook utilizes `window.navigator.permissions` which is not widely supported by all browsers. For information on what browser supports what [please refer to the documentation](https://developer.mozilla.org/en-US/docs/Web/API/Permissions/query).
+
