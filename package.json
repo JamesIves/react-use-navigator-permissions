@@ -4,7 +4,7 @@
   "module": "dist/react-use-navigator-permissions.esm.js",
   "version": "0.1.1",
   "license": "MIT",
-  "main": "dist/lib.js",
+  "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
