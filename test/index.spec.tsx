@@ -1,6 +1,17 @@
-import { renderHook, cleanup } from '@testing-library/react-hooks';
+import { renderHook, cleanup, act } from '@testing-library/react-hooks';
 import useNavigatorPermission from '../src';
 
+export interface Global {
+  document: Document;
+  window: Window;
+  navigator: any;
+}
+
+declare const global: Global;
+
+const mockPermissions = {
+  query: jest.fn().mockImplementationOnce(() => Promise.resolve({ state:'permitted'})),
+};
 
 afterEach(cleanup);
 
@@ -11,11 +22,16 @@ describe('it', () => {
     expect(result.current).toStrictEqual({ error: true, status: '' });
   });
 
-  // it('correctly returns the permission status', () => {
+  it('correctly returns the permission status', async () => {
+    act(() => {global.navigator.permissions = mockPermissions})
 
-  //   const {result} = renderHook(() => useNavigatorPermission('geolocation'))
+    const { result, waitForNextUpdate } = renderHook(() => useNavigatorPermission('geolocation'))
 
+    await waitForNextUpdate()
 
-  //   expect(result.current).toStrictEqual({ error: false, status: 'permdadadaditted' });
-  // });
+    expect(result.current).toStrictEqual({
+      error: false,
+      status: 'permitted',
+    });
+  });
 });
