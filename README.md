@@ -1,5 +1,4 @@
 # useNavigatorPermissions Hook 🔗 🗺️
-[![Build Status](https://github.com/JamesIves/react-use-navigator-permissions/workflows/unit-tests/badge.svg)](https://github.com/JamesIves/react-use-navigator-permissions/actions) [![Codecov Coverage](https://codecov.io/gh/JamesIves/react-use-navigator-permissions/branch/master/graph/badge.svg)](https://codecov.io/gh/JamesIves/react-use-navigator-permissions/branch/master)
 
 This [React Hook](https://reactjs.org/docs/hooks-overview.html) allows you to make a query to see if a user has either accepted or denied permissions to a given [navigator api](https://developer.mozilla.org/en-US/docs/Web/API/Navigator).
 
